@@ -1,0 +1,32 @@
+# Task 1 — Packet Capture During Focused Scan
+
+## 📌 Host Scanned
+IP Address: 192.168.20.10  
+Ports scanned: 22 (SSH), 80 (HTTP)  
+
+## 🛠 Tools Used
+- Nmap (for port scanning)  
+- Wireshark (for packet capture)  
+
+## 🚀 Steps Followed
+1. Opened Wireshark and selected my network interface (Wi-Fi / Ethernet).  
+2. Started capture in Wireshark.  
+   - Optional display filter: `ip.addr == 192.168.20.10`  
+3. In a terminal, ran the focused Nmap scan:
+nmap -sS -p 22,80 192.168.20.10
+4. After the scan finished, stopped capture in Wireshark.  
+5. Saved the capture file as:
+packet capture/open-port-scanning.pcap
+
+
+## 📸 Screenshot / Packet Observation
+
+
+"TCP handshake observed: SYN sent from my PC, SYN-ACK received from target, indicating port is open."
+
+## 📝 Notes
+- Port 22 (SSH) and 80 (HTTP) were scanned. Open ports can be seen from SYN/SYN-ACK packets.  
+- `.pcap` files are sensitive; only open in Wireshark and do not share publicly.  
+
+ 
+
