@@ -20,7 +20,7 @@ packet capture/open-port-scanning.pcap
 
 
 ## 📸 Screenshot / Packet Observation
-
+![TCP Handshake Screenshot](screenshots/image.png)
 
 "TCP handshake observed: SYN sent from my PC, SYN-ACK received from target, indicating port is open."
 
