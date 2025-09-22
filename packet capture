@@ -1,7 +1,7 @@
 # Task 1 — Packet Capture During Focused Scan
 
 ## 📌 Host Scanned
-IP Address: 192.168.20.10  
+IP Address: 192.168.20.218 
 Ports scanned: 22 (SSH), 80 (HTTP)  
 
 ## 🛠 Tools Used
@@ -11,9 +11,9 @@ Ports scanned: 22 (SSH), 80 (HTTP)
 ## 🚀 Steps Followed
 1. Opened Wireshark and selected my network interface (Wi-Fi / Ethernet).  
 2. Started capture in Wireshark.  
-   - Optional display filter: `ip.addr == 192.168.20.10`  
+   - Optional display filter: `ip.addr == 192.168.20.218`  
 3. In a terminal, ran the focused Nmap scan:
-nmap -sS -p 22,80 192.168.20.10
+nmap -sS -p 22,80 192.168.20.218
 4. After the scan finished, stopped capture in Wireshark.  
 5. Saved the capture file as:
 packet capture/open-port-scanning.pcap
