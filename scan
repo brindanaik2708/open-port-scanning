@@ -1,0 +1,51 @@
+# Task 1 — Nmap Scan Output
+# File: open-port-scanning/scan.txt
+# Purpose: Nmap scan results for Task 1 (local network port discovery)
+
+--- Metadata ---
+Scanned by   : Brinda Naik
+Date/Time    : 2025-09-22 14:00 IST
+Host running : Windows 10 
+Nmap command : nmap -sS 192.168.29.219/24 -oN open-port-scanning/scan.txt
+Target       : 192.168.29.219/24
+Nmap version : 7.93
+
+Number of hosts found: 3
+
+--- Raw Nmap output ---
+
+Starting Nmap 7.98 ( https://nmap.org ) at 2025-09-22 17:18 +0530
+Nmap scan report for reliance.reliance (192.168.29.1)
+Host is up (0.024s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT     STATE  SERVICE
+22/tcp   closed ssh
+53/tcp   open   domain
+80/tcp   open   http
+443/tcp  open   https
+1900/tcp open   upnp
+2869/tcp closed icslap
+7443/tcp open   oracleas-https
+8080/tcp open   http-proxy
+8200/tcp closed trivnet1
+8443/tcp open   https-alt
+MAC Address: 8C:A3:99:80:CF:C5 (Servercom (India) Private Limited)
+
+Nmap scan report for 192.168.29.238
+Host is up (0.0098s latency).
+All 1000 scanned ports on 192.168.29.238 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 26:D3:D2:58:8A:AA (Unknown)
+
+Nmap scan report for 192.168.29.219
+Host is up (0.00084s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT      STATE SERVICE
+135/tcp   open  msrpc
+139/tcp   open  netbios-ssn
+445/tcp   open  microsoft-ds
+16992/tcp open  amt-soap-http
+
+Nmap done: 256 IP addresses (3 hosts up) scanned in 9.03 seconds
+
+END OF FILE
