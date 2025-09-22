@@ -1,0 +1,57 @@
+# Task 1 — Risk Analysis of Open Ports
+
+## 🔍 What to Look For
+When analyzing scan results, check each open port for:
+1. **Service Identification**  
+   - Which service is running? (e.g., SSH, HTTP, SMB, MySQL)  
+   - Is the version outdated or vulnerable?
+
+2. **Exposure**  
+   - Is the port needed for normal operations?  
+   - Is it exposed to the whole network or only internal devices?  
+
+3. **Authentication & Encryption**  
+   - Does the service require login (e.g., SSH, FTP)?  
+   - Is the traffic encrypted (HTTPS, SSH) or plaintext (HTTP, Telnet, FTP)?  
+
+4. **Known Vulnerabilities**  
+   - Some services are frequently exploited (e.g., SMBv1, Telnet, RDP).  
+   - Check if the service/version has known CVEs.  
+
+---
+
+## ⚖️ Severity Rating Guide
+Use this simple **Low / Medium / High** scale for student projects:
+
+- **Low** 🔵  
+  - Service is common and safe if configured properly.  
+  - Example: HTTP (80) open on a web server with no sensitive data.  
+
+- **Medium** 🟠  
+  - Service requires authentication but may be misconfigured.  
+  - Example: SSH (22) with password login enabled.  
+  - Risk increases if default/weak credentials are used.  
+
+- **High** 🔴  
+  - Known vulnerable service or dangerous exposure.  
+  - Example: SMB (445) open with SMBv1, or database exposed to the internet.  
+  - Can allow remote code execution, data theft, or full system compromise.  
+
+---
+
+## 📝 Example Severity Assignment
+
+| IP            | Port | Service | Severity | Reason |
+|---------------|------|---------|----------|--------|
+| 192.168.20.1  | 80   | HTTP    | Low      | Router admin page (ok if password changed) |
+| 192.168.20.5  | 22   | SSH     | Medium   | SSH enabled, should use key-based auth only |
+| 192.168.20.10 | 445  | SMB     | High     | SMBv1 detected, vulnerable to exploits |
+
+---
+
+## ✅ Recommendations
+- **Close** ports that are not required.  
+- **Patch/Update** outdated services.  
+- **Enforce Strong Authentication** (use SSH keys, disable default passwords).  
+- **Encrypt** traffic wherever possible (prefer HTTPS over HTTP).  
+- **Monitor** logs for suspicious activity.  
